@@ -46,3 +46,6 @@ Thumbs.db       # Windows thumbnail cache
 # Local configuration files
 *.local
 *.env
+
+# macOS metadata
+.DS_Store
