@@ -1,0 +1,48 @@
+# C++ build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.dSYM/         # macOS debug symbols
+*.ncb            # Visual Studio database file
+*.suo            # Visual Studio user options file
+*.sdf            # Visual Studio
+*.vcxproj.user   # Visual Studio user-specific project file
+
+# Python artifacts
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pkl
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Virtual environment directories
+.venv/
+venv/
+ENV/
+env/
+
+# IDE-specific files and directories
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Miscellaneous
+.DS_Store       # macOS Finder metadata
+Thumbs.db       # Windows thumbnail cache
+
+# Local configuration files
+*.local
+*.env
