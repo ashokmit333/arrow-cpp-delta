@@ -1,13 +1,5 @@
-// cmake-format: off
-//#include <boost/python.hpp>
-// cmake-format: on
-//#include "api.h"
 #include <arrow/api.h>
-// #include <arrow/python/api.h>
 #include <arrow/python/pyarrow.h>
-#include <boost/algorithm/string.hpp>
-#include <boost/filesystem.hpp>
-#include <boost/python/suite/indexing/vector_indexing_suite.hpp>
 #include <iostream>
 #include <vector>
 #include <Python.h>
@@ -19,6 +11,17 @@ PyObject* pFunc = nullptr;
 void initialize_python() 
 {
     Py_Initialize();
+    #ifdef _WIN32
+    const char* pythonPath = "C:\\Users\\ashsubr\\Repos\\Libraries\\python-dev\\myenv\\Lib\\site-packages";
+    #else
+    const char* pythonPath = "/Users/ashsubr/Repos/Libraries/pyarrow-dev/lib/python3.12/site-packages";
+    #endif
+
+    PyObject* sysPath = PySys_GetObject("path");
+    PyObject* path = PyUnicode_DecodeFSDefault(pythonPath);
+    PyList_Append(sysPath, path);
+    Py_DECREF(path);
+
     // initialize pyarrow
     if (arrow::py::import_pyarrow() < 0)
     {
