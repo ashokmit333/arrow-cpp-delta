@@ -24,7 +24,7 @@ std::vector<SignalLogging> get_signal_loggings() {
     return signals;
 }
 
-PYBIND11_MODULE(my_module, m) {
+PYBIND11_MODULE(cpp_module, m) {
     // Expose the SignalLogging struct to Python
     py::class_<SignalLogging>(m, "SignalLogging")
         .def(py::init<>())  // Default constructor
