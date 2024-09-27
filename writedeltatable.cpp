@@ -14,7 +14,7 @@ void initialize_python()
     #ifdef _WIN32
     const char* pythonPath = "C:\\Users\\ashsubr\\Repos\\Libraries\\python-dev\\myenv\\Lib\\site-packages";
     #else
-    const char* pythonPath = "/Users/ashsubr/Repos/Libraries/pyarrow-dev/lib/python3.12/site-packages";
+    const char* pythonPath = "/Users/ashsubr/Code/Libraries/pyarrow-dev/lib/python3.12/site-packages";
     #endif
 
     PyObject* sysPath = PySys_GetObject("path");
